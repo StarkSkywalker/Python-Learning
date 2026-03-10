@@ -1,0 +1,8 @@
+result1 = int(15.6)
+result2 = int('15')
+result3 = int('    12   ')
+result4 = int(48)
+print(type(result1),result1)
+print(type(result2),result2)
+print(type(result3),result3)
+print(type(result4),result4)

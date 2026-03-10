@@ -1,0 +1,13 @@
+# print(True and True)
+# print(True and False)
+# print(False and True)
+# print(False and False)
+# print(9>2 and 9>2)
+# print(9>2 and 2>3)
+# print(2>3 and 9>2)
+# print(2>3 and 2>3)
+
+print(3+3 and 0)
+print(3+3 and 8/2)
+print(3+3 and False)
+print(0 and False)
