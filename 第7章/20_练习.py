@@ -53,4 +53,57 @@ class Manager:
 
         if target:
             self.stu_list.remove(target)
+            print('删除成功！')
+        else:
+            print('学号有误，删除失败！')
 
+    def show_all_student(self):
+        if self.stu_list:
+            for stu in self.stu_list:
+                print(stu)
+        else:
+            print('暂无学生！')
+
+    def set_score(self):
+        sid = input('请输入学号：')
+        for stu in self.stu_list:
+            if stu.stu_id == sid:
+                score_str = input('请输入成绩（学科-分数，学科-分数）')
+                score_list = score_str.replace('，',',').split(',')
+
+                for item in score_list:
+                    subject,score = item.split('-')
+                    subject = subject.strip()
+                    score = float(score.strip())
+                    stu.add_scores(subject,score)
+                print('打印成功！')
+                return
+        print('学号有误！')
+
+    def run(self):
+        while True:
+            print('************学生管理************')
+            print('1. 添加学生')
+            print('2. 删除学生')
+            print('3. 查看所有学生')
+            print('4. 录入成绩')
+            print('5. 退出')
+
+            chocie = input('请输入操作编号：')
+            if chocie == '1':
+                self.add_student()
+            elif chocie == '2':
+                self.del_student()
+            elif chocie == '3':
+                self.show_all_student()
+            elif chocie == '4':
+                self.set_score()
+            elif chocie == '5':
+                print('再见！')
+                break
+            else:
+                print('输入有误！')
+
+
+m1 = Manager()
+m1.run()
