@@ -1,0 +1,14 @@
+names = ['张三', '李四', '王五']
+
+it = iter(names)
+print(it)
+
+result = iter(it)
+print(result)
+
+x = iter(result)
+print(x)
+
+it = iter(names)
+for item in it:
+    print(item)
